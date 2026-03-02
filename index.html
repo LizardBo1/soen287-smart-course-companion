@@ -15,25 +15,45 @@
             <h1 class="font-huge gradient-text">
                 Smart Course <span class="text-accent-purple">Companion</span>
             </h1>
-            <p class="login-desc">
-                Making school fun :)
-            </p>
+            <p class="login-desc">Making school fun :)</p>
+
             <div class="container-portal-choice">
-                <a href="student-dashboard.html" class="intruct-stu-choice">
+                <div class="intruct-stu-choice" onclick="openModal('student')">
                     <div class="icon-circle">🎓</div>
                     <h2>Student</h2>
                     <p>Track your grades, assessments, and academic progress.</p>
-                </a>
-                <a href="instructor-dashboard.html" class="intruct-stu-choice">
+                </div>
+
+                <div class="intruct-stu-choice" onclick="openModal('instructor')">
                     <div class="icon-circle instructor-icon">🏛️</div>
                     <h2>Instructor</h2>
                     <h5 class="login-admin-portal">ADMIN PORTAL</h5>
                     <p>Manage course structures and weight</p>
-                </a>
+                </div>
             </div>
         </div>
     </div>
-    <script src="scripts/global.js"></script>
+
+    <div class="modal-overlay" id="loginModal" onclick="handleOverlayClick(event)">
+        <div class="modal">
+            <button class="modal-close" onclick="closeModal()">✕</button>
+
+            <div class="modal-icon" id="modalIcon"></div>
+            <h2 class="modal-title" id="modalTitle"></h2>
+            <p class="modal-subtitle" id="modalSubtitle"></p>
+
+            <label class="form-label">ID</label>
+            <input class="form-input" type="text" id="loginId" placeholder="Enter your ID">
+
+            <label class="form-label">Password</label>
+            <input class="form-input" type="password" id="loginPassword" placeholder="*********">
+
+            <button class="modal-submit" id="modalSubmit" onclick="handleLogin()">Sign In</button>
+
+        </div>
+    </div>
+
+    <script src="scripts/index.js"></script>
 </body>
 
 </html>
