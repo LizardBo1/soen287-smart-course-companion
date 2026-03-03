@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>COMP218 - Fundamentals of Programming</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="courses.css">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <aside class="sidebar">
+        <div class="sidebar-top">
+            <h1 class="logo">Concordia</h1>
+
+            <nav>
+                <a href="student-dashboard.html" class="nav-item">🏠 Home</a>
+                <a href="moodle.html" class="nav-item active">📚 Moodle Courses</a>
+                <a href="grades.html" class="nav-item">📝 Grades</a>
+                <a href="enrollment.html" class="nav-item">🔖 Enrollment</a>
+            </nav>
+        </div>
+
+        <!-- Apple Style Account -->
+        <div class="account-section">
+            <input type="checkbox" id="account-toggle" class="account-toggle">
+
+            <label for="account-toggle" class="account-button">
+                <span>Account</span>
+                <span class="arrow">⌄</span>
+            </label>
+
+            <div class="account-dropdown">
+                <div class="account-item">Student Information</div>
+                <div class="account-item">Settings</div>
+                <div class="account-item logout">Log Out</div>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <a href="moodle.html" class="back-link">← Back to Courses</a>
+
+        <h1 class="page-title">COMP218 Fundamentals of Programming</h1>
+
+        <div class="cards-container">
+
+            <article class="card">
+                <h2>To-do</h2>
+                <ul>
+                    <li><a href="#">Assignment 1 - Variables & Data Types - 3/3</a></li>
+                    <li><a href="#">Lab 2 - Control Structures - 6/3</a></li>
+                    <li><a href="#">Mini Project - Calculator Program - 12/3</a></li>
+                </ul>
+            </article>
+
+            <article class="card">
+                <h2>Lecture Notes</h2>
+                <ul>
+                    <li><a href="#">Lecture 1 - Introduction to Programming</a></li>
+                    <li><a href="#">Lecture 2 - Variables & Expressions</a></li>
+                    <li><a href="#">Lecture 3 - Conditional Statements</a></li>
+                    <li><a href="#">Lecture 4 - Loops</a></li>
+                    <li><a href="#">Lecture 5 - Functions</a></li>
+                </ul>
+            </article>
+
+            <article class="card">
+                <h2>Tutorials</h2>
+                <ul>
+                    <li><a href="#">Tutorial 1 - IDE Setup</a></li>
+                    <li><a href="#">Tutorial 2 - Debugging Basics</a></li>
+                    <li><a href="#">Tutorial 3 - Loop Practice</a></li>
+                    <li><a href="#">Tutorial 4 - Function Exercises</a></li>
+                </ul>
+            </article>
+
+        </div>
+
+    </main>
+
+</div>
+
+</body>
+</html>
