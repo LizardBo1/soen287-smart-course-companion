@@ -1,0 +1,333 @@
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    min-height: 100vh;
+    color: #E5E7EB;
+    background-color: #0f1226;
+    position: relative;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease;
+}
+
+/* Aurora Background */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+
+    background:
+        radial-gradient(circle at 15% 30%, rgba(94, 92, 230, 0.6), transparent 40%),
+        radial-gradient(circle at 85% 20%, rgba(0, 122, 255, 0.5), transparent 45%),
+        radial-gradient(circle at 70% 80%, rgba(175, 82, 222, 0.5), transparent 40%),
+        radial-gradient(circle at 30% 75%, rgba(255, 45, 85, 0.4), transparent 40%);
+    filter: blur(90px);
+}
+
+/* =========================
+   LAYOUT
+========================= */
+.dashboard {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+.sidebar {
+    width: 240px;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: rgba(20, 24, 52, 0.7);
+    backdrop-filter: blur(20px);
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 40px;
+    color: #FFFFFF;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: #C7C9D9;
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-size: 15px;
+    transition: all 0.2s ease;
+}
+
+.nav-item:hover {
+    background: rgba(255, 255, 255, 0.06);
+    color: #FFFFFF;
+}
+
+.nav-item.active {
+    background: rgba(94, 92, 230, 0.25);
+    color: #FFFFFF;
+}
+
+.back-to-dashboard {
+    margin-top: auto;
+    color: #A5B4FC;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.back-to-dashboard:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+   MAIN CONTENT (UNCHANGED)
+========================= */
+.main-content {
+    flex: 1;
+    padding: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+/* =========================
+   SECTIONS (General, Theme, Danger)
+========================= */
+.section {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(25px);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.section-title {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #FFFFFF;
+}
+
+.setting-item {
+    margin-bottom: 20px;
+}
+
+.setting-item label {
+    font-size: 16px;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 8px;
+    color: #D1D5DB;
+}
+
+.setting-item input {
+    padding: 12px;
+    border-radius: 10px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.08);
+    color: #E5E7EB;
+    border: none;
+    font-size: 14px;
+}
+
+.setting-item input::placeholder {
+    color: #A1A1AA;
+}
+
+/* =========================
+   SWITCH (Light/Dark Mode)
+========================= */
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.theme-toggle input {
+    appearance: none;
+    outline: none;
+    position: relative;
+    width: 50px; /* Correct width */
+    height: 30px; /* Correct height */
+    background-color: #ffffff; /* Light background for off state */
+    border: 1px solid #D9DADC; /* Gray border */
+    border-radius: 50px; /* Rounded edges */
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1); /* Subtle box-shadow */
+    transition: background-color 200ms ease, box-shadow 200ms ease, transform 200ms ease; /* Smooth transitions */
+}
+
+/* Circle inside the switch (inactive state) */
+.theme-toggle input::before {
+    content: "";
+    position: absolute;
+    top: 2px; /* Adjusted for a more centered circle */
+    left: 2px;
+    width: 26px; /* Size of the circle */
+    height: 26px;
+    background-color: transparent; /* Circle background */
+    border-radius: 50%; /* Rounded circle */
+    background-color: #D9DADC; /* Circle color (gray for off state) */
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2); /* Shadow for the circle */
+    transition: left 200ms ease-in-out, box-shadow 200ms ease-in-out; /* Smooth transition of the circle */
+}
+
+/* Active state (when the switch is toggled on) */
+.theme-toggle input:checked {
+    background-color: #4ED164; /* Green background when active */
+    box-shadow: inset 20px 0 0 0 #4ED164; /* Green inner shadow when active */
+}
+
+/* Circle movement and shadow when switch is on */
+.theme-toggle input:checked::before {
+    left: 20px; /* Move the circle to the right */
+    box-shadow: -2px 4px 3px rgba(0, 0, 0, 0.05); /* Lighter shadow when active */
+}
+
+/* Optional: Adding transition effects for the switch label */
+.theme-toggle label {
+    font-size: 16px;
+    color: #333;
+    margin-left: 10px;
+    font-weight: 500;
+}
+
+/* =========================
+   DANGER ZONE
+========================= */
+.danger-item {
+    margin-top: 20px;
+}
+
+.btn-danger {
+    background: linear-gradient(45deg, #F43F5E, #EF4444);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-danger:hover {
+    transform: scale(1.05);
+}
+
+/* =========================
+   DARK MODE
+========================= */
+body.dark-mode {
+    background-color: #0f1226;
+    color: #E5E7EB;
+}
+
+/* =========================
+   LIGHT MODE
+========================= */
+body.light-mode {
+    background-color: #F9FAFB;
+    color: #000; /* Set the primary text color to black for high contrast */
+}
+
+body.light-mode .logo {
+    color: #000; /* Set the logo text to black in light mode */
+}
+
+body.light-mode .section {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+}
+
+body.light-mode .section-title {
+    color: #000; /* Ensure section titles are dark for good contrast */
+    font-weight: 700; /* Make titles bolder */
+}
+
+body.light-mode .setting-item label {
+    font-size: 18px; /* Increase font size for better readability */
+    font-weight: 600; /* Slightly increase weight for more emphasis */
+    color: #000; /* Set the label color to black */
+}
+
+body.light-mode .setting-item input {
+    padding: 12px;
+    border-radius: 10px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.08);
+    color: #000; /* Ensure input text is dark */
+    border: none;
+    font-size: 14px;
+}
+
+body.light-mode .setting-item input::placeholder {
+    color: #888; /* Use a lighter gray for placeholder text */
+}
+
+body.light-mode .nav-item {
+    color: #000; /* Set nav item text to black for readability */
+}
+
+body.light-mode .nav-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #000; /* Ensure hover state text is still black */
+}
+
+body.light-mode .nav-item.active {
+    background: rgba(217, 187, 98, 0.25);
+    color: #000; /* Ensure active nav items are readable */
+}
+
+body.light-mode .back-to-dashboard {
+    color: #0F172A;
+}
+
+body.light-mode .back-to-dashboard:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+   NAV ITEMS
+========================= */
+body.light-mode .nav-item {
+    color: #000; /* Set nav item text to black for readability */
+}
+
+body.light-mode .nav-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #000; /* Ensure hover state text is still black */
+}
+
+body.light-mode .nav-item.active {
+    background: rgba(217, 187, 98, 0.25);
+    color: #000; /* Ensure active nav items are readable */
+}
+
+body.light-mode .back-to-dashboard {
+    color: #0F172A;
+}
+
+body.light-mode .back-to-dashboard:hover {
+    text-decoration: underline;
+}

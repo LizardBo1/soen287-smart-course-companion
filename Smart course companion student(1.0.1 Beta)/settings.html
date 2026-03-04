@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Settings</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="settings.css">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="sidebar-top">
+            <h1 class="logo">Settings</h1>
+
+            <nav>
+                <a href="settings.html" class="nav-item active">⚙️ General Settings</a>
+                <a href="#theme-settings" class="nav-item">🎨 Theme Settings</a>
+                <a href="#danger-zone" class="nav-item">⚠️ Deregister</a>
+            </nav>
+        </div>
+
+        <!-- BACK TO DASHBOARD BUTTON -->
+        <a href="student-dashboard.html" class="back-to-dashboard">← Back to Dashboard</a>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+        
+        <!-- General Settings Section -->
+        <section class="section" id="general-settings">
+            <h2 class="section-title">General Settings</h2>
+            <div class="setting-item">
+                <label for="user-name">Full Name</label>
+                <input type="text" id="user-name" placeholder="Enter your name">
+            </div>
+            <div class="setting-item">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email">
+            </div>
+        </section>
+
+        <!-- Theme Settings Section -->
+        <section class="section" id="theme-settings">
+            <h2 class="section-title">Theme Settings</h2>
+            <div class="setting-item">
+                <label for="theme-toggle">Light/Dark Mode</label>
+                <div class="theme-toggle">
+                    <input type="checkbox" id="theme-toggle">
+                    <span class="slider"></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Danger Zone Section -->
+        <section class="section" id="danger-zone">
+            <h2 class="section-title">Deregister</h2>
+            <div class="setting-item danger-item">
+                <button class="btn-danger">Delete Account</button>
+            </div>
+        </section>
+    </main>
+
+</div>
+
+<script src="settings.js"></script>
+</body>
+</html>

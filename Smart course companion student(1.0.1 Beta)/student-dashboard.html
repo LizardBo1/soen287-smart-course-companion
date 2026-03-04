@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="student-dashboard.css">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <aside class="sidebar">
+        <div class="sidebar-top">
+            <h1 class="logo">Concordia</h1>
+
+            <nav>
+                <a href="student-dashboard.html" class="nav-item active">🏠 Home</a>
+                <a href="moodle.html" class="nav-item">📚 Moodle Courses</a>
+                <a href="grades.html" class="nav-item">📝 Grades</a>
+                <a href="enrollment.html" class="nav-item">🔖 Enrollment</a>
+            </nav>
+        </div>
+
+        <!-- Apple Style Account Section -->
+        <div class="account-section">
+            
+            <!-- Invisible checkbox controller -->
+            <input type="checkbox" id="account-toggle" class="account-toggle">
+
+            <!-- Clickable Account Button -->
+            <label for="account-toggle" class="account-button">
+                <span>Account</span>
+                <span class="arrow">⌄</span>
+            </label>
+
+            <!-- Floating Glass Menu -->
+            <div class="account-dropdown">
+                <div class="account-item">Student Information</div>
+                <div class="account-item"><a href="settings.html">Settings</a></div>
+                <div class="account-item logout">
+                    <a href="index.html">Log Out</a>
+                </div>
+            </div>
+
+        </div>
+
+    </aside>
+
+    <main class="main-content">
+
+        <div class="card welcome-card">
+            <div>
+                <h2>Welcome back, Janko 👋</h2>
+                <p class="subtle">Here’s your academic overview for this week.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>Upcoming Due</h3>
+
+            <div class="upcoming-item">
+                <span class="course-label">COMP353</span>
+                <span>Assignment 1 — Feb 28</span>
+            </div>
+
+            <div class="upcoming-item">
+                <span class="course-label">SOEN287</span>
+                <span>Midterm — Mar 1</span>
+            </div>
+
+            <div class="upcoming-item">
+                <span class="course-label">COMP353</span>
+                <span>Lab 3 — Mar 5</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>Upcoming Quizzes & Exams</h3>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Course</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>COMP353 Midterm</td>
+                        <td>Mar 1</td>
+                    </tr>
+                    <tr>
+                        <td>SOEN287 Midterm</td>
+                        <td>Mar 21</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="card progress-card">
+            <h3>Overall Course Progress</h3>
+
+            <div class="progress-container">
+                <div class="circle">
+                    <span>75%</span>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+</div>
+
+</body>
+</html>

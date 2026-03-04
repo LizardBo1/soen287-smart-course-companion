@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grades Overview</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="grades.css">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="sidebar-top">
+            <h1 class="logo">Concordia</h1>
+
+            <nav>
+                <a href="student-dashboard.html" class="nav-item">🏠 Home</a>
+                <a href="moodle.html" class="nav-item">📚 Moodle Courses</a>
+                <a href="grades.html" class="nav-item active">📊 Grades</a>
+                <a href="enrollment.html" class="nav-item">🔖 Enrollment</a>
+            </nav>
+        </div>
+
+        <!-- Account Section -->
+        <div class="account-section">
+            <input type="checkbox" id="account-toggle" class="account-toggle">
+            <label for="account-toggle" class="account-button">
+                <span>Account</span>
+                <span class="arrow">⌄</span>
+            </label>
+
+            <div class="account-dropdown">
+                <div class="account-item">Student Information</div>
+                <div class="account-item"><a href="settings.html">Settings</a></div>
+                <div class="account-item logout"><a href="index.html">Log Out</a></div>
+            </div>
+        </div>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <h1 class="page-title">Academic Performance</h1>
+
+        <!-- GPA SECTION -->
+        <section class="card gpa-card">
+
+            <div class="gpa-left">
+                <h2>🎯 GPA Goal</h2>
+
+                <div class="gpa-input-row">
+                    <input type="number" id="gpaGoal" step="0.1" min="0" max="4" placeholder="Set GPA goal">
+                    <button onclick="setGoal()">Save</button>
+                </div>
+
+                <p>Current GPA: <strong id="currentGPA">3.65</strong></p>
+                <p>Target GPA: <strong id="targetGPA">Not set</strong></p>
+
+                <div class="badge-display" id="badgeDisplay">
+                    🚀 Rising Scholar
+                </div>
+            </div>
+
+            <div class="gpa-circle">
+                <div class="circle">
+                    <span id="gpaPercent">91%</span>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- COURSES -->
+        <div class="courses-container">
+
+            <!-- SOEN287 -->
+            <section class="card">
+                <h2>SOEN287</h2>
+                <div class="line-chart">
+                    <svg viewBox="0 0 300 150" preserveAspectRatio="none">
+                        <defs>
+                            <linearGradient id="gradientStroke1" x1="0" y1="0" x2="1" y2="0">
+                                <stop offset="0%" stop-color="#8B5CF6"/>
+                                <stop offset="100%" stop-color="#22D3EE"/>
+                            </linearGradient>
+                        </defs>
+                        <path class="line-path" d="M0,70 C50,60 100,80 150,65 S250,40 300,50" stroke="url(#gradientStroke1)"/>
+                    </svg>
+                    <div class="line-labels">
+                        <span>Quiz</span>
+                        <span>Midterm</span>
+                        <span>Final</span>
+                    </div>
+                </div>
+
+                <div class="assignment-list">
+                    <h3>Assignments</h3>
+                    <ul>
+                        <li>Assignment 1 - 
+                            <input type="number" id="gpaGoal" step="1" min="0" max="10" placeholder="Your Grade">
+                            <button onclick="#">Save</button>
+                        </li>
+                        <li>Assignment 2 - 
+                            <input type="number" id="gpaGoal" step="1" min="0" max="10" placeholder="Your Grade">
+                            <button onclick="#">Save</button>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- COMP248 -->
+            <section class="card">
+                <h2>COMP248</h2>
+                <div class="line-chart">
+                    <svg viewBox="0 0 300 150" preserveAspectRatio="none">
+                        <defs>
+                            <linearGradient id="gradientStroke2" x1="0" y1="0" x2="1" y2="0">
+                                <stop offset="0%" stop-color="#8B5CF6"/>
+                                <stop offset="100%" stop-color="#22D3EE"/>
+                            </linearGradient>
+                        </defs>
+                        <path class="line-path" d="M0,60 C50,40 100,70 150,55 S250,30 300,45" stroke="url(#gradientStroke2)"/>
+                    </svg>
+                    <div class="line-labels">
+                        <span>Quiz</span>
+                        <span>Midterm</span>
+                        <span>Final</span>
+                    </div>
+                </div>
+
+                <div class="assignment-list">
+                    <h3>Assignments</h3>
+                    <ul>
+                        <li>OOP Assignment - 
+                            <input type="number" id="gpaGoal" step="1" min="0" max="10" placeholder="Your Grade">
+                            <button onclick="#">Save</button>
+                        </li>
+                        <li>Project - 
+                            <input type="number" id="gpaGoal" step="1" min="0" max="10" placeholder="Your Grade">
+                            <button onclick="#">Save</button>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+        </div>
+
+    </main>
+</div>
+
+<script>
+window.onload = function () {
+    // Previously for bars - now lines are SVG, so no height needed
+};
+
+function setGoal() {
+    const goal = parseFloat(document.getElementById("gpaGoal").value);
+    const current = parseFloat(document.getElementById("currentGPA").innerText);
+
+    document.getElementById("targetGPA").innerText = goal;
+
+    const badge = document.getElementById("badgeDisplay");
+
+    if (!goal) return;
+
+    if (current >= goal) {
+        badge.innerHTML = "🏆 Goal Crusher";
+    } else if (current >= 3.7) {
+        badge.innerHTML = "🔥 Insane Coder";
+    } else if (current >= 3.5) {
+        badge.innerHTML = "⭐ 80% Better Than Average";
+    } else {
+        badge.innerHTML = "🚀 Rising Scholar";
+    }
+}
+</script>
+
+</body>
+</html>

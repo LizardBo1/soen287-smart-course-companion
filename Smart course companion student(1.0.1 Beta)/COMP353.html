@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMP353 - Database</title>
+    <link rel="stylesheet" href="courses.css">
+</head>
+<body>
+
+<div class="dashboard">
+
+    <aside class="sidebar">
+        <div class="sidebar-top">
+            <h1 class="logo">Concordia</h1>
+
+            <nav>
+                <a href="student-dashboard.html" class="nav-item">🏠 Home</a>
+                <a href="moodle.html" class="nav-item active">📚 Moodle Courses</a>
+                <a href="grades.html" class="nav-item">📝 Grades</a>
+                <a href="enrollment.html" class="nav-item">🔖 Enrollment</a>
+            </nav>
+        </div>
+
+        <div class="account-section">
+            <input type="checkbox" id="account-toggle" class="account-toggle">
+
+            <label for="account-toggle" class="account-button">
+                <span>Account</span>
+                <span class="arrow">⌄</span>
+            </label>
+
+            <div class="account-dropdown">
+                <div class="account-item">Student Information</div>
+                <div class="account-item">Settings</div>
+                <div class="account-item logout"><a href="index.html">Log Out</a></div>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <a href="moodle.html" class="back-link">← Back to Courses</a>
+
+        <h1 class="page-title">COMP353 Database</h1>
+
+        <div class="cards-container">
+
+            <article class="card">
+                <h2>To-do</h2>
+                <ul>
+                    <li><a href="#">Database Project Proposal - 2/3</a></li>
+                    <li><a href="#">SQL Exercise 5 - 5/3</a></li>
+                    <li><a href="#">ER Diagram Assignment - 10/3</a></li>
+                </ul>
+            </article>
+
+            <article class="card">
+                <h2>Lecture Notes</h2>
+                <ul>
+                    <li><a href="#">Lecture 1 - Database Basics</a></li>
+                    <li><a href="#">Lecture 2 - SQL Queries</a></li>
+                    <li><a href="#">Lecture 3 - ER Modeling</a></li>
+                    <li><a href="#">Lecture 4 - Normalization</a></li>
+                    <li><a href="#">Lecture 5 - Advanced Indexing</a></li>
+                </ul>
+            </article>
+
+            <article class="card">
+                <h2>Tutorials</h2>
+                <ul>
+                    <li><a href="#">Tutorial 1 - SELECT / INSERT</a></li>
+                    <li><a href="#">Tutorial 2 - UPDATE / DELETE</a></li>
+                    <li><a href="#">Tutorial 3 - ER to Relational</a></li>
+                    <li><a href="#">Tutorial 4 - Join Queries</a></li>
+                    <li><a href="#">Tutorial 5 - Stored Procedures</a></li>
+                </ul>
+            </article>
+
+        </div>
+
+    </main>
+
+</div>
+
+</body>
+</html>
