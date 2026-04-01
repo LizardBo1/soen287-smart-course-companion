@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instructor Dashboard</title>
+    <link rel="stylesheet" href="../../styles/styles.css">
+    <link rel="stylesheet" href="../../styles/instructor.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-main">
+        <div class="sidebar">
+            <h2 class="sidebar-title">Welcome Professor {Name}</h2>
+            <nav>
+                <a href="instructor-dashboard.html" class="nav-item active">🏛 Dashboard</a>
+                <a href="course-manager.html" class="nav-item">📁 Course Manager</a>
+                <a href="user-statistics.html" class="nav-item">📊 User Statistics</a>
+            </nav>
+
+            <div class="account-section">
+                <p class="acc-mana">Admin Account</p>
+                <select class="account-btn" onchange="window.location.href=this.value">
+                    <option value="">Admin Information</option>
+                    <option value="../index.html">Log Out</option>
+                </select>
+            </div>
+        </div>
+
+
+        <main class="main-page-container">
+            <div class="card" style="grid-column: span 2;">
+                <div class="course-control1">
+                    <h2 class="card-title" style="margin: 0;">Active Course Control</h2>
+                    <button class="action-btn">+ Create New Course</button>
+                </div>
+
+                <div class="course-control">
+                    <div>
+                        <h3>COMP353 — Database</h3>
+                        <p>Winter 2026 Session (3 Sections)</p>
+                    </div>
+                    <div class="course-actions">
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                        <button class="secondary-edit">Edit</button>
+                        <button class="secondary-delete">Delete</button>
+                    </div>
+                </div>
+
+                <div class="course-control">
+                    <div>
+                        <h3>SOEN287 — Web Programming</h3>
+                        <p>Winter 2026 Session (1 Section)</p>
+                    </div>
+                    <div class="course-actions">
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                        <button class="secondary-edit">Edit</button>
+                        <button class="secondary-delete">Delete</button>
+                    </div>
+                </div>
+
+                <div class="course-control">
+                    <div>
+                        <h3>COMP248 — Object-Oriented Programming</h3>
+                        <p>Fall 2025 Session (1 Section)</p>
+                    </div>
+                    <div class="course-actions">
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                        <button class="secondary-edit">Edit</button>
+                        <button class="secondary-delete">Delete</button>
+                    </div>
+                </div>
+
+                <div class="course-control">
+                    <div>
+                        <h3>COMP218 — Fundamentals of Programming</h3>
+                        <p>Winter 2026 Session (2 Sections)</p>
+                    </div>
+                    <div class="course-actions">
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                        <button class="secondary-edit">Edit</button>
+                        <button class="secondary-delete">Delete</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <h2 class="card-title">Assessment Weighting</h2>
+                <p>Define marks for <span class="text-blue">SOEN287</span></p>
+                <table class="weighting-table">
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Count</th>
+                            <th>Weight (%)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Assignments</td>
+                            <td><input type="number" value="4"></td>
+                            <td><input type="number" value="20"></td>
+                        </tr>
+                        <tr>
+                            <td>Quizzes</td>
+                            <td><input type="number" value="2"></td>
+                            <td><input type="number" value="10"></td>
+                        </tr>
+                        <tr>
+                            <td>Project</td>
+                            <td><input type="number" value="1"></td>
+                            <td><input type="number" value="30"></td>
+                        </tr>
+                        <tr>
+                            <td>Final Exam</td>
+                            <td><input type="number" value="1"></td>
+                            <td><input type="number" value="40"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button class="action-btn m-top-2" style="width: 100%;">Save Weightings</button>
+            </div>
+
+            <!-- Anonymized Stats -->
+            <div class="card">
+                <h2 class="card-title">Course Analytics (Live)</h2>
+
+                <div>
+                    <div class="stats-container">
+                        <span>SOEN287 Completion Rate</span>
+                        <span style="color: #3b82f6;">84%</span>
+                    </div>
+                    <div class="stat-bar">
+                        <div class="stat-bar-inner" style="width: 84%;"></div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="stats-container">
+                        <span>COMP353 Completion Rate</span>
+                        <span class="font-sm" style="color: #3b82f6;">62%</span>
+                    </div>
+                    <div class="stat-bar">
+                        <div class="stat-bar-inner" style="width: 62%;"></div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="stats-container">
+                        <span>COMP218 Completion Rate</span>
+                        <span class="font-sm" style="color: #3b82f6;">71%</span>
+                    </div>
+                    <div class="stat-bar">
+                        <div class="stat-bar-inner" style="width: 71%;"></div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="stats-container">
+                        <span>Global Student Engagement</span>
+                        <span style="color: #3b82f6;">88%</span>
+                    </div>
+                    <div class="stat-bar">
+                        <div class="stat-bar-inner"
+                            style="width: 88%; background: linear-gradient(90deg, #8b5cf6, #3b82f6);"></div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <div id="courseModal" class="modal-overlay">
+        <div class="modal">
+            <button class="modal-close">×</button>
+            <h2 class="modal-title">Create New Course</h2>
+            <p class="modal-subtitle">Set up a new course for the semester.</p>
+
+            <form>
+                <label class="form-label">COURSE CODE</label>
+                <input type="text" class="form-input" placeholder="e.g. SOEN 287">
+
+                <label class="form-label">COURSE NAME</label>
+                <input type="text" class="form-input" placeholder="e.g. Web Programming">
+
+                <label class="form-label">SESSION</label>
+                <select class="form-input" style="background: rgba(255, 255, 255, 0.04);">
+                    <option>Winter 2026</option>
+                    <option>Fall 2025</option>
+                    <option>Summer 2026</option>
+                </select>
+
+                <button type="button" class="modal-submit instructor" onclick="closeModal()">Create Course</button>
+            </form>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

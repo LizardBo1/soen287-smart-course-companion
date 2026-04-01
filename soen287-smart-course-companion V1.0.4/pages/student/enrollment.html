@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Course Enrollment</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styles/enrollment.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <h1 class="logo">Course Enrollment</h1>
+
+            <!-- SEARCH -->
+            <div class="search-box">
+                <input type="text" placeholder="Search by course code or name">
+            </div>
+
+            <!-- FILTER -->
+            <div class="filter-section">
+                <h3>Department Filter</h3>
+
+                <label><input type="checkbox"> Computer Science</label>
+                <label><input type="checkbox"> Social Science</label>
+                <label><input type="checkbox"> Aerospace Engineering</label>
+                <label><input type="checkbox"> Fine Arts</label>
+            </div>
+
+
+
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+            <a href="student-dashboard.html" class="back-link">← Back to dashboard</a>
+            <br>
+            <!-- WEEKLY TIMETABLE -->
+            <h2 class="section-title">My Weekly Timetable</h2>
+
+            <div class="timetable">
+
+                <div class="time-row header">
+                    <div></div>
+                    <div>Mon</div>
+                    <div>Tue</div>
+                    <div>Wed</div>
+                    <div>Thu</div>
+                    <div>Fri</div>
+                </div>
+
+                <div class="time-row">
+                    <div class="time">9:00</div>
+                    <div class="class-block">SOEN341</div>
+                    <div></div>
+                    <div class="class-block">SOEN341</div>
+                    <div></div>
+                    <div></div>
+                </div>
+
+                <div class="time-row">
+                    <div class="time">11:00</div>
+                    <div></div>
+                    <div class="class-block">COMP353</div>
+                    <div></div>
+                    <div class="class-block">COMP353</div>
+                    <div></div>
+                </div>
+
+            </div>
+
+            <br>
+
+            <h2 class="section-title">Available Courses</h2>
+
+            <div class="course-list">
+
+                <!-- COURSE 1 -->
+                <div class="course-card">
+                    <div class="course-header">
+                        <h3>COMP249</h3>
+                        <span class="status full">70/70 (FULL)</span>
+                    </div>
+
+                    <p class="course-title">Object-Oriented Programming II</p>
+
+                    <p class="description">
+                        Advanced object-oriented programming concepts including
+                        encapsulation, inheritance, polymorphism, abstract classes,
+                        interfaces, collections, and hash-based data structures.
+                    </p>
+
+                    <p class="prereq"><strong>Prerequisite:</strong> COMP248</p>
+
+                    <div class="course-actions">
+                       <button class="btn details-btn"
+                        data-code="COMP249"
+                        data-name="Object-Oriented Programming II"
+                        data-instructor="Dr. Taleb"
+                        data-term="Fall 2025"
+                        data-schedule="Mon 9:00,Fri 9:00">
+                        Details
+                    </button>
+                    </div>
+                </div>
+
+                <!-- COURSE 2 -->
+                <div class="course-card">
+                    <div class="course-header">
+                        <h3>SOEN341</h3>
+                        <span class="status open">45/70</span>
+                    </div>
+
+                    <p class="course-title">Software Engineering I</p>
+
+                    <p class="description">
+                        Introduction to software development lifecycle,
+                        Agile methodology, UML modeling, and team-based
+                        project development.
+                    </p>
+
+                    <p class="prereq"><strong>Prerequisite:</strong> COMP248</p>
+
+                    <div class="course-actions">
+                        <select>
+                            <option>Section A - Mon/Wed</option>
+                            <option>Section B - Tue/Thu</option>
+                        </select>
+
+                        <button class="btn enroll">Enroll</button>
+                        <button class="btn details-btn"
+                            data-code="SOEN341"
+                            data-name="Software Engineering I"
+                            data-instructor="Prof. Janko"
+                            data-term="Fall 2025"
+                            data-schedule="Mon 9:00,Wed 9:00">
+                            Details
+                        </button>
+                    </div>
+                </div>
+
+                <!-- COURSE 3 -->
+                <div class="course-card">
+                    <div class="course-header">
+                        <h3>COMP353</h3>
+                        <span class="status enrolled">Enrolled</span>
+                    </div>
+
+                    <p class="course-title">Databases</p>
+
+                    <p class="description">
+                        Database design principles, ER modeling,
+                        relational algebra, SQL, indexing, and normalization.
+                    </p>
+
+                    <p class="prereq"><strong>Prerequisite:</strong> COMP248</p>
+
+                    <div class="course-actions">
+                        <button class="btn details-btn"
+                            data-code="COMP353"
+                            data-name="Databases"
+                            data-instructor="Professor Janko"
+                            data-term="Fall 2025"
+                            data-schedule="Tue 11:00,Thu 11:00">
+                            Details
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+        </main>
+
+    </div>
+
+
+    
+
+<div class="modal" id="courseModal">
+    <div class="modal-content">
+        <h3 id="m-code"></h3>
+        <p id="m-name"></p>
+        <p id="m-instructor"></p>
+        <p id="m-term"></p>
+        <button id="closeModal">Close</button>
+    </div>
+</div>
+
+<script>
+const modal = document.getElementById("courseModal");
+
+document.querySelectorAll(".details-btn").forEach(btn => {
+    btn.onclick = () => {
+        document.getElementById("m-code").textContent = btn.dataset.code;
+        document.getElementById("m-name").textContent = btn.dataset.name;
+        document.getElementById("m-instructor").textContent = btn.dataset.instructor;
+        document.getElementById("m-term").textContent = btn.dataset.term;
+
+        modal.classList.add("active");
+    };
+});
+
+document.getElementById("closeModal").onclick = () => {
+    modal.classList.remove("active");
+};
+</script>
+</body>
+
+</html>
