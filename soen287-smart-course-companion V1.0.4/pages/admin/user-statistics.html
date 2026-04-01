@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Statistics</title>
+    <link rel="stylesheet" href="../../styles/styles.css">
+    <link rel="stylesheet" href="../../styles/instructor.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-main">
+        <div class="sidebar">
+            <h2 class="sidebar-title">Welcome Professor {Name}</h2>
+            <nav>
+                <a href="instructor-dashboard.html" class="nav-item">🏛 Dashboard</a>
+                <a href="course-manager.html" class="nav-item">📁 Course Manager</a>
+                <a href="user-statistics.html" class="nav-item active">📊 User Statistics</a>
+            </nav>
+
+            <div class="account-section">
+                <p class="acc-mana">Admin Account</p>
+                <select class="account-btn">
+                    <option value="">Admin Information</option>
+                    <option value="../index.html">Log Out</option>
+                </select>
+            </div>
+        </div>
+
+        <main class="main-page-container">
+            <!-- Top Statistics -->
+            <div class="card" style="grid-column: span 2;">
+                <h2 class="card-title">Overall Statistics</h2>
+
+                <div class="stats-grid">
+                    <div class="stat-box-large">
+                        <span class="stat-number">287</span>
+                        <span class="stat-label">Total Enrolled Students</span>
+                        <span class="stat-trend">↑ 12% from last semester</span>
+                    </div>
+                    <div class="stat-box-large">
+                        <span class="stat-number">92%</span>
+                        <span class="stat-label">Login Rate</span>
+                        <span class="stat-trend">Active in last 7 days</span>
+                    </div>
+                    <div class="stat-box-large">
+                        <span class="stat-number">78%</span>
+                        <span class="stat-label">Assessment Completion</span>
+                        <span class="stat-trend">Average across all courses</span>
+                    </div>
+                    <div class="stat-box-large">
+                        <span class="stat-number">4.2</span>
+                        <span class="stat-label">Average GPA</span>
+                        <span class="stat-trend">Distribution normalized</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Per-Course Statistics -->
+            <div class="card">
+                <h2 class="card-title">SOEN287 — Web Programming</h2>
+
+                <div class="stat-section">
+                    <div class="stat-row">
+                        <span>Total Students:</span>
+                        <strong>89</strong>
+                    </div>
+                    <div class="stat-row">
+                        <span>Active Students:</span>
+                        <strong style="color: #10b981;">87 (97.8%)</strong>
+                    </div>
+                    <div class="stat-row">
+                        <span>Completed Assignments:</span>
+                        <strong>78%</strong>
+                    </div>
+                    <div class="stat-row">
+                        <span>Average Grade:</span>
+                        <strong style="color: #3b82f6;">78.5%</strong>
+                    </div>
+                </div>
+
+                <div style="margin-top: 1.5rem;">
+                    <p style="color: #94a3b8; margin-bottom: 1rem; font-size: 0.9rem;">Assessment Completion Rates</p>
+                    <div class="progress-item">
+                        <div class="progress-label">
+                            <span>Assignment 1</span>
+                            <span>96%</span>
+                        </div>
+                        <div class="stat-bar">
+                            <div class="stat-bar-inner" style="width: 96%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="progress-item">
+                        <div class="progress-label">
+                            <span>Assignment 2</span>
+                            <span>82%</span>
+                        </div>
+                        <div class="stat-bar">
+                            <div class="stat-bar-inner" style="width: 82%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="progress-item">
+                        <div class="progress-label">
+                            <span>Quiz 1</span>
+                            <span>89%</span>
+                        </div>
+                        <div class="stat-bar">
+                            <div class="stat-bar-inner" style="width: 89%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="progress-item">
+                        <div class="progress-label">
+                            <span>Project Submission</span>
+                            <span>71%</span>
+                        </div>
+                        <div class="stat-bar">
+                            <div class="stat-bar-inner" style="width: 71%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="progress-item">
+                        <div class="progress-label">
+                            <span>Final Exam</span>
+                            <span>34%</span>
+                        </div>
+                        <div class="stat-bar">
+                            <div class="stat-bar-inner" style="width: 34%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COMP 353 Statistics -->
+            <div class="card">
+                <h2 class="card-title">COMP353 — Database</h2>
+
+                <div class="stat-section">
+                    <div class="stat-row">
+                        <span>Total Students:</span>
+                        <strong>87</strong>
+                    </div>
+                    <div class="stat-row">
+                        <span>Active Students:</span>
+                        <strong style="color: #10b981;">85 (97.7%)</strong>
+                    </div>
+                    <div class="stat-row">
+                        <span>Completed Assignments:</span>
+                        <strong>65%</strong>
+                    </div>
+                    <div class="stat-row">
+                        <span>Average Grade:</span>
+                        <strong style="color: #3b82f6;">72.3%</strong>
+                    </div>
+                </div>
+
+                <div style="margin-top: 1.5rem;">
+                    <p style="color: #94a3b8; margin-bottom: 1rem; font-size: 0.9rem;">Assessment Completion Rates</p>
+                    <div class="progress-item">
+                        <div class="progress-label">
+                            <span>Problem Set 1</span>
+                            <span>88%</span>
+                        </div>
+                        <div class="stat-bar">
+                            <div class="stat-bar-inner" style="width: 88%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="progress-item">
+                        <div class="progress-label">
+                            <span>Problem Set 2</span>
+                            <span>72%</span>
+                        </div>
+                        <div class="stat-bar">
+                            <div class="stat-bar-inner" style="width: 72%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="progress-item">
+                        <div class="progress-label">
+                            <span>Midterm Exam</span>
+                            <span>51%</span>
+                        </div>
+                        <div class="stat-bar">
+                            <div class="stat-bar-inner" style="width: 51%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="progress-item">
+                        <div class="progress-label">
+                            <span>Final Exam</span>
+                            <span>28%</span>
+                        </div>
+                        <div class="stat-bar">
+                            <div class="stat-bar-inner" style="width: 28%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COMP 218 Statistics -->
+            <div class="card">
+                <h2 class="card-title">COMP218 — Fundamentals of Programming</h2>
+
+                <div class="stat-section">
+                    <div class="stat-row">
+                        <span>Total Students:</span>
+                        <strong>156</strong>
+                    </div>
+                    <div class="stat-row">
+                        <span>Active Students:</span>
+                        <strong style="color: #10b981;">148 (94.9%)</strong>
+                    </div>
+                    <div class="stat-row">
+                        <span>Completed Assignments:</span>
+                        <strong>71%</strong>
+                    </div>
+                    <div class="stat-row">
+                        <span>Average Grade:</span>
+                        <strong style="color: #3b82f6;">75.8%</strong>
+                    </div>
+                </div>
+
+                <div style="margin-top: 1.5rem;">
+                    <p style="color: #94a3b8; margin-bottom: 1rem; font-size: 0.9rem;">Assessment Completion Rates</p>
+                    <div class="progress-item">
+                        <div class="progress-label">
+                            <span>Lab 1</span>
+                            <span>92%</span>
+                        </div>
+                        <div class="stat-bar">
+                            <div class="stat-bar-inner" style="width: 92%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="progress-item">
+                        <div class="progress-label">
+                            <span>Lab 2</span>
+                            <span>78%</span>
+                        </div>
+                        <div class="stat-bar">
+                            <div class="stat-bar-inner" style="width: 78%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="progress-item">
+                        <div class="progress-label">
+                            <span>Quiz 1</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="stat-bar">
+                            <div class="stat-bar-inner" style="width: 85%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="progress-item">
+                        <div class="progress-label">
+                            <span>Midterm Exam</span>
+                            <span>62%</span>
+                        </div>
+                        <div class="stat-bar">
+                            <div class="stat-bar-inner" style="width: 62%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COMP 248 Statistics -->
+            <div class="card">
+                <h2 class="card-title">COMP248 — Object-Oriented Programming</h2>
+
+                <div class="stat-section">
+                    <div class="stat-row">
+                        <span>Total Students:</span>
+                        <strong>98</strong>
+                    </div>
+                    <div class="stat-row">
+                        <span>Active Students:</span>
+                        <strong style="color: #10b981;">94 (95.9%)</strong>
+                    </div>
+                    <div class="stat-row">
+                        <span>Completed Assignments:</span>
+                        <strong>81%</strong>
+                    </div>
+                    <div class="stat-row">
+                        <span>Average Grade:</span>
+                        <strong style="color: #3b82f6;">79.2%</strong>
+                    </div>
+                </div>
+
+                <div style="margin-top: 1.5rem;">
+                    <p style="color: #94a3b8; margin-bottom: 1rem; font-size: 0.9rem;">Assessment Completion Rates</p>
+                    <div class="progress-item">
+                        <div class="progress-label">
+                            <span>Assignment 1</span>
+                            <span>94%</span>
+                        </div>
+                        <div class="stat-bar">
+                            <div class="stat-bar-inner" style="width: 94%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="progress-item">
+                        <div class="progress-label">
+                            <span>Assignment 2</span>
+                            <span>87%</span>
+                        </div>
+                        <div class="stat-bar">
+                            <div class="stat-bar-inner" style="width: 87%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="progress-item">
+                        <div class="progress-label">
+                            <span>Project Submission</span>
+                            <span>76%</span>
+                        </div>
+                        <div class="stat-bar">
+                            <div class="stat-bar-inner" style="width: 76%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="progress-item">
+                        <div class="progress-label">
+                            <span>Final Exam</span>
+                            <span>68%</span>
+                        </div>
+                        <div class="stat-bar">
+                            <div class="stat-bar-inner" style="width: 68%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Assessment Completion Summary -->
+            <div class="card">
+                <h2 class="card-title">Overall Assessment Completion</h2>
+
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    <div>
+                        <div class="stats-container">
+                            <span>All Courses - Assignments</span>
+                            <span style="color: #3b82f6;">73.75%</span>
+                        </div>
+                        <div class="stat-bar">
+                            <div class="stat-bar-inner" style="width: 73.75%;"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="stats-container">
+                            <span>All Courses - Quizzes</span>
+                            <span style="color: #3b82f6;">76.5%</span>
+                        </div>
+                        <div class="stat-bar">
+                            <div class="stat-bar-inner" style="width: 76.5%;"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="stats-container">
+                            <span>All Courses - Projects/Exams</span>
+                            <span style="color: #3b82f6;">57.5%</span>
+                        </div>
+                        <div class="stat-bar">
+                            <div class="stat-bar-inner" style="width: 57.5%;"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="stats-container">
+                            <span>Overall Average Completion</span>
+                            <span style="color: #10b981; font-weight: 700;">69.25%</span>
+                        </div>
+                        <div class="stat-bar">
+                            <div class="stat-bar-inner"
+                                style="width: 69.25%; background: linear-gradient(90deg, #10b981, #06b6d4);"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Deadline Impact -->
+            <div class="card">
+                <h2 class="card-title">Deadline Compliance</h2>
+
+                <div class="compliance-item">
+                    <div class="compliance-header">
+                        <h4>SOEN287 - Assignment 3</h4>
+                        <span class="compliance-badge success">✓ Completed</span>
+                    </div>
+                    <div class="compliance-info">
+                        <span>89 students | 100% submitted</span>
+                        <span>Deadline: March 4, 2026</span>
+                    </div>
+                </div>
+
+                <div class="compliance-item">
+                    <div class="compliance-header">
+                        <h4>COMP353 - Problem Set 3</h4>
+                        <span class="compliance-badge pending">⧗ Pending</span>
+                    </div>
+                    <div class="compliance-info">
+                        <span>124 students | 65% submitted</span>
+                        <span>Deadline: March 7, 2026</span>
+                    </div>
+                </div>
+
+                <div class="compliance-item">
+                    <div class="compliance-header">
+                        <h4>COMP218 - Lab 2</h4>
+                        <span class="compliance-badge warning">! Late Submissions</span>
+                    </div>
+                    <div class="compliance-info">
+                        <span>156 students | 78% submitted (20 late)</span>
+                        <span>Deadline: March 3, 2026</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Activity Alerts -->
+            <div class="card">
+                <h2 class="card-title">At-Risk Students</h2>
+
+                <p style="color: #94a3b8; font-size: 0.9rem; margin-bottom: 1.5rem;">Students with low engagement or
+                    performance</p>
+
+                <div class="alert-item warning">
+                    <span class="alert-icon">⚠</span>
+                    <div>
+                        <p><strong>8 students</strong> in COMP353 have missed 2+ assessments</p>
+                        <small>Consider reaching out for support</small>
+                    </div>
+                </div>
+
+                <div class="alert-item warning">
+                    <span class="alert-icon">⚠</span>
+                    <div>
+                        <p><strong>3 students</strong> in SOEN287 scoring below 50% average</p>
+                        <small>Possible intervention through tutoring services</small>
+                    </div>
+                </div>
+
+                <div class="alert-item warning">
+                    <span class="alert-icon">⚠</span>
+                    <div>
+                        <p><strong>12 students</strong> haven't logged in for 5+ days</p>
+                        <small>Engagement drop - consider deadline reminders</small>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <style>
+        .progress-item {
+            margin-bottom: 1.25rem;
+        }
+
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .stat-section {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 12px;
+        }
+
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .stat-row span {
+            color: #94a3b8;
+            font-size: 0.95rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .stat-box {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .stat-box-large {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+        }
+
+        .stat-label {
+            display: block;
+            color: #94a3b8;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-trend {
+            display: block;
+            color: #10b981;
+            font-size: 0.8rem;
+        }
+
+        .day-label {
+            font-size: 0.8rem;
+            color: #94a3b8;
+        }
+
+        .compliance-item {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .compliance-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+        }
+
+        .compliance-header h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .compliance-badge {
+            padding: 0.35rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .compliance-badge.success {
+            background: rgba(16, 185, 129, 0.15);
+            color: #10b981;
+        }
+
+        .compliance-badge.pending {
+            background: rgba(59, 130, 246, 0.15);
+            color: #3b82f6;
+        }
+
+        .compliance-badge.warning {
+            background: rgba(249, 115, 22, 0.15);
+            color: #f97316;
+        }
+
+        .compliance-info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #94a3b8;
+        }
+
+        .alert-item {
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid rgba(249, 115, 22, 0.5);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .alert-icon {
+            font-size: 1.25rem;
+            min-width: 24px;
+        }
+
+        .alert-item p {
+            margin: 0 0 0.25rem 0;
+            font-size: 0.95rem;
+        }
+
+        .alert-item small {
+            color: #94a3b8;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .main-page-container {
+                grid-template-columns: 1fr;
+            }
+
+            .card[style*="grid-column"] {
+                grid-column: auto !important;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .compliance-info {
+                flex-direction: column;
+                gap: 0.25rem;
+            }
+        }
+    </style>
+</body>
+
+</html>
